@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './VehicleService'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,25 +10,32 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, VehicleService_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (VehicleService_1_1) {
+                VehicleService_1 = VehicleService_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
-                function AppComponent() {
+                function AppComponent(_vehicleService) {
+                    this._vehicleService = _vehicleService;
                     this.title = 'This is Test';
                     this.firstName = 'Kalyan';
+                    this.vehicles = [];
+                    this.vehicles = _vehicleService.getVehicles();
                 }
                 AppComponent = __decorate([
                     core_1.Component({
-                        template: "\n     <h1>{{title}}</h1>\n    <div> <input\u00A0[value]=\"firstName\">\n     </div>",
-                        selector: 'my-app'
+                        template: "\n     <h1>{{title}}</h1>\n        <div> <input\u00A0[value]=\"firstName\">\n     </div>\n     \n     <div *ngFor=\"#vehicle of vehicles; #i = index\">\n        {{vehicle.name}}\n    </div> ",
+                        selector: 'my-app',
+                        providers: [VehicleService_1.VehicleService],
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [VehicleService_1.VehicleService])
                 ], AppComponent);
                 return AppComponent;
             }());

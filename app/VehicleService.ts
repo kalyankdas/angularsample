@@ -1,0 +1,25 @@
+import {Injectable} from 'angular2/core'
+
+@Injectable()
+export class VehicleService{
+
+    getVehicles(){
+        return [
+            { 
+            'name': 'Toyota'
+            },
+            
+            { 
+            'name': 'Honda'
+            },
+            
+            { 
+            'name': 'Ford'
+            }
+            
+        
+        ];
+    
+    }
+
+}
