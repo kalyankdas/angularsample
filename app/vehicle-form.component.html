@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Hero Form</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" required>
+      </div>
+        <div class="form-group">
+        <label for="year">Year</label>
+        <select class="form-control" required>
+            <option *ngFor="#year of years" [value]="p">{{p}}</option>
+        </select>
+        </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

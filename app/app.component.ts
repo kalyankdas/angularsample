@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core'
 import {VehicleService} from './VehicleService'
-
+import {VehicleFormComponent} from './vehicle-form.component'
 
 @Component({
     template : `
